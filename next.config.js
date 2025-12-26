@@ -5,6 +5,16 @@ const nextConfig = {
     NEXT_PUBLIC_API_URL:
       process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000",
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/api/:path*',
+          destination: `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"}/:path*`,
+        },
+      ],
+    };
+  },
 };
 
 module.exports = nextConfig;
