@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 
-const API_BASE_URL = "/api";
+const API_BASE_URL = "/api/weather";
 
 export interface WeatherData {
   city: string;
