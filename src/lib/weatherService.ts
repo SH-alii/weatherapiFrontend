@@ -33,7 +33,7 @@ export async function fetchWeatherData(
 ): Promise<WeatherData> {
   try {
     const response = await axios.get<WeatherData>(
-      `${API_BASE_URL}/weather/average`,
+      `${API_BASE_URL}/average`,
       {
         params: {
           city: city.trim(),
