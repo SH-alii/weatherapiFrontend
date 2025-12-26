@@ -39,7 +39,11 @@ export async function fetchWeatherData(
           city: city.trim(),
           days: parseInt(days.toString(), 10),
         },
+        headers: {
+          "Content-Type": "application/json",
+        },
         timeout: 10000,
+        withCredentials: true,
       }
     );
 
