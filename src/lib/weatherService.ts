@@ -32,16 +32,13 @@ export async function fetchWeatherData(
   days: number
 ): Promise<WeatherData> {
   try {
-    const response = await axios.get<WeatherData>(
-      `${API_BASE_URL}/average`,
-      {
-        params: {
-          city: city.trim(),
-          days: parseInt(days.toString(), 10),
-        },
-        timeout: 10000,
-      }
-    );
+    const response = await axios.get<WeatherData>(`${API_BASE_URL}/average`, {
+      params: {
+        city: city.trim(),
+        days: parseInt(days.toString(), 10),
+      },
+      timeout: 10000,
+    });
 
     return response.data;
   } catch (error) {
